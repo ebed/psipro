@@ -1,0 +1,41 @@
+<%= form_for(@meassure) do |f| %>
+  <% if @meassure.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@meassure.errors.count, "error") %> prohibited this meassure from being saved:</h2>
+
+      <ul>
+      <% @meassure.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :day %><br>
+    <%= f.date_select :day %>
+  </div>
+  <div class="field">
+    <%= f.label :metric_id %><br>
+    <%= f.number_field :metric_id %>
+  </div>
+  <div class="field">
+    <%= f.label :value %><br>
+    <%= f.text_field :value %>
+  </div>
+  <div class="field">
+    <%= f.label :test_id %><br>
+    <%= f.number_field :test_id %>
+  </div>
+  <div class="field">
+    <%= f.label :patient_id %><br>
+    <%= f.number_field :patient_id %>
+  </div>
+  <div class="field">
+    <%= f.label :specialist_id %><br>
+    <%= f.number_field :specialist_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
